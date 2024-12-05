@@ -98,20 +98,20 @@ services:
       - node_dotnet_network
     command: ["dotnet", "/app/publish/Metheo.Api.dll"]
 
-  # react_app:
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   container_name: react_app
-  #   working_dir: /app
-  #   volumes:
-  #     - ./react:/app
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - dotnet_api
-  #   networks:
-  #     - node_dotnet_network
+    # react_app:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    # container_name: react_app
+    # working_dir: /app
+    # volumes:
+    #   - ./react:/app
+    # ports:
+    #   - "3000:3000"
+    # depends_on:
+    #   - dotnet_api
+    # networks:
+    #   - node_dotnet_network
 
 volumes:
   sqlserver_data:
