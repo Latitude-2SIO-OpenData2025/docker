@@ -24,6 +24,10 @@ COPY --from=builder /app/node_modules ./node_modules
 
 # Exposer le port
 EXPOSE 3000
+# Mettre à jour et installer libpq-dev et pdo_pgsql
+RUN apt-get update && apt-get install -y libpq-dev && \
+    docker-php-ext-install pdo pdo_pgsql
 
 # Lancer le serveur
 CMD ["npm", "start"]
+
